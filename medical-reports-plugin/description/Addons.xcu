@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE oor:component-set PUBLIC "-//OpenOffice.org//DTD Office Document 1.0//EN" "component-set.dtd">
+<oor:component-set xmlns:oor="http://openoffice.org/2001/registry" 
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Addons Configuration -->
+    <!-- This adds toolbar buttons and menu items to LibreOffice -->
+
+    <node oor:name="AddonConfig">
+        <node oor:name="MenuBar">
+            <node oor:name="com.medicalreports.Menu" oor:op="replace">
+                <prop oor:name="Title" oor:type="xs:string">
+                    <value>Medical Reports</value>
+                </prop>
+                <node oor:name="Items">
+                    <node oor:name="mni_OpenDashboard" oor:op="replace">
+                        <prop oor:name="Command" oor:type="xs:string">
+                            <value>private:configuration://medicalreports/OpenDashboard</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value>Apri Dashboard Pazienti</value>
+                        </prop>
+                    </node>
+                    <node oor:name="mni_NewReport" oor:op="replace">
+                        <prop oor:name="Command" oor:type="xs:string">
+                            <value>private:configuration://medicalreports/NewReport</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value>Nuovo Referto</value>
+                        </prop>
+                    </node>
+                    <node oor:name="mni_SaveReport" oor:op="replace">
+                        <prop oor:name="Command" oor:type="xs:string">
+                            <value>private:configuration://medicalreports/SaveReport</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value>Salva e Firma</value>
+                        </prop>
+                    </node>
+                    <node oor:name="mni_ExportPDF" oor:op="replace">
+                        <prop oor:name="Command" oor:type="xs:string">
+                            <value>private:configuration://medicalreports/ExportPDF</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value>Esporta PDF</value>
+                        </prop>
+                    </node>
+                </node>
+            </node>
+        </node>
+
+        <node oor:name="Toolbar">
+            <node oor:name="com.medicalreports.Toolbar" oor:op="replace">
+                <prop oor:name="Title" oor:type="xs:string">
+                    <value>Medical Reports Station</value>
+                </prop>
+                <prop oor:name="Contexts" oor:type="xs:string">
+                    <value>writer|calc</value>
+                </prop>
+                <node oor:name="Items">
+                    <!-- Open Dashboard Button -->
+                    <node oor:name="btn_OpenDashboard" oor:op="replace">
+                        <prop oor:name="CommandURL" oor:type="xs:string">
+                            <value>.uno:MedicalReportsOpenDashboard</value>
+                        </prop>
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value>Dashboard</value>
+                        </prop>
+                        <prop oor:name="TooltipText" oor:type="xs:string">
+                            <value>Apri il dashboard pazienti</value>
+                        </prop>
+                        <prop oor:name="ImageURL" oor:type="xs:string">
+                            <value>private:image/symbolic/res/command/sc_database.png</value>
+                        </prop>
+                    </node>
+
+                    <!-- New Report Button -->
+                    <node oor:name="btn_NewReport" oor:op="replace">
+                        <prop oor:name="CommandURL" oor:type="xs:string">
+                            <value>.uno:MedicalReportsNewReport</value>
+                        </prop>
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value>Nuovo Referto</value>
+                        </prop>
+                        <prop oor:name="TooltipText" oor:type="xs:string">
+                            <value>Crea un nuovo referto medico</value>
+                        </prop>
+                        <prop oor:name="ImageURL" oor:type="xs:string">
+                            <value>private:image/symbolic/res/command/sc_newdoc.png</value>
+                        </prop>
+                    </node>
+
+                    <!-- Separator -->
+                    <node oor:name="sep1" oor:op="replace">
+                        <prop oor:name="Type" oor:type="xs:string">
+                            <value>separator</value>
+                        </prop>
+                    </node>
+
+                    <!-- Save & Sign Button -->
+                    <node oor:name="btn_SaveReport" oor:op="replace">
+                        <prop oor:name="CommandURL" oor:type="xs:string">
+                            <value>.uno:MedicalReportsSaveReport</value>
+                        </prop>
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value>Salva</value>
+                        </prop>
+                        <prop oor:name="TooltipText" oor:type="xs:string">
+                            <value>Salva il referto nel database</value>
+                        </prop>
+                        <prop oor:name="ImageURL" oor:type="xs:string">
+                            <value>private:image/symbolic/res/command/sc_save.png</value>
+                        </prop>
+                    </node>
+
+                    <!-- Export PDF Button -->
+                    <node oor:name="btn_ExportPDF" oor:op="replace">
+                        <prop oor:name="CommandURL" oor:type="xs:string">
+                            <value>.uno:MedicalReportsExportPDF</value>
+                        </prop>
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value>PDF</value>
+                        </prop>
+                        <prop oor:name="TooltipText" oor:type="xs:string">
+                            <value>Esporta referto in PDF</value>
+                        </prop>
+                        <prop oor:name="ImageURL" oor:type="xs:string">
+                            <value>private:image/symbolic/res/command/sc_exportpdf.png</value>
+                        </prop>
+                    </node>
+
+                    <!-- Status Dropdown -->
+                    <node oor:name="ddl_Status" oor:op="replace">
+                        <prop oor:name="CommandURL" oor:type="xs:string">
+                            <value>.uno:MedicalReportsStatus</value>
+                        </prop>
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value>Stato</value>
+                        </prop>
+                        <prop oor:name="TooltipText" oor:type="xs:string">
+                            <value>Cambia stato del referto</value>
+                        </prop>
+                        <prop oor:name="Type" oor:type="xs:string">
+                            <value>dropdown</value>
+                        </prop>
+                        <node oor:name="Items">
+                            <node oor:name="status_BOZZA" oor:op="replace">
+                                <prop oor:name="CommandURL" oor:type="xs:string">
+                                    <value>.uno:MedicalReportsStatusBozza</value>
+                                </prop>
+                                <prop oor:name="Label" oor:type="xs:string">
+                                    <value>BOZZA</value>
+                                </prop>
+                            </node>
+                            <node oor:name="status_COMPLETATO" oor:op="replace">
+                                <prop oor:name="CommandURL" oor:type="xs:string">
+                                    <value>.uno:MedicalReportsStatusCompletato</value>
+                                </prop>
+                                <prop oor:name="Label" oor:type="xs:string">
+                                    <value>COMPLETATO</value>
+                                </prop>
+                            </node>
+                            <node oor:name="status_FIRMATO" oor:op="replace">
+                                <prop oor:name="CommandURL" oor:type="xs:string">
+                                    <value>.uno:MedicalReportsStatusFirmato</value>
+                                </prop>
+                                <prop oor:name="Label" oor:type="xs:string">
+                                    <value>FIRMATO</value>
+                                </prop>
+                            </node>
+                            <node oor:name="status_ARCHIVIATO" oor:op="replace">
+                                <prop oor:name="CommandURL" oor:type="xs:string">
+                                    <value>.uno:MedicalReportsStatusArchiviato</value>
+                                </prop>
+                                <prop oor:name="Label" oor:type="xs:string">
+                                    <value>ARCHIVIATO</value>
+                                </prop>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+
+    <!-- Commands Configuration -->
+    <node oor:name="Commands">
+        <node oor:name="MedicalReportsOpenDashboard" oor:op="replace">
+            <prop oor:name="Name" oor:type="xs:string">MedicalReportsOpenDashboard</prop>
+            <prop oor:name="Command" oor:type="xs:string">private:configuration://medicalreports/OpenDashboard</prop>
+            <prop oor:name="ModuleName" oor:type="xs:string">com.medicalreports</prop>
+        </node>
+        <node oor:name="MedicalReportsNewReport" oor:op="replace">
+            <prop oor:name="Name" oor:type="xs:string">MedicalReportsNewReport</prop>
+            <prop oor:name="Command" oor:type="xs:string">private:configuration://medicalreports/NewReport</prop>
+            <prop oor:name="ModuleName" oor:type="xs:string">com.medicalreports</prop>
+        </node>
+        <node oor:name="MedicalReportsSaveReport" oor:op="replace">
+            <prop oor:name="Name" oor:type="xs:string">MedicalReportsSaveReport</prop>
+            <prop oor:name="Command" oor:type="xs:string">private:configuration://medicalreports/SaveReport</prop>
+            <prop oor:name="ModuleName" oor:type="xs:string">com.medicalreports</prop>
+        </node>
+        <node oor:name="MedicalReportsExportPDF" oor:op="replace">
+            <prop oor:name="Name" oor:type="xs:string">MedicalReportsExportPDF</prop>
+            <prop oor:name="Command" oor:type="xs:string">private:configuration://medicalreports/ExportPDF</prop>
+            <prop oor:name="ModuleName" oor:type="xs:string">com.medicalreports</prop>
+        </node>
+    </node>
+
+</oor:component-set>
