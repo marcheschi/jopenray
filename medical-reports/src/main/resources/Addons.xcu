@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" 
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <node oor:name="AddonUI">
+        <node oor:name="OfficeToolbar">
+            <node oor:name="MedicalReportsToolbar">
+                <prop oor:name="ui:description" oor:type="xs:string">
+                    <value xml:lang="it">Medical Report Station Toolbar</value>
+                </prop>
+                <node oor:name="Commands">
+                    <!-- Open Dashboard Button -->
+                    <node oor:name="cmd_dashboard">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Apri Dashboard</value>
+                        </prop>
+                        <prop oor:name="Tooltip" oor:type="xs:string">
+                            <value xml:lang="it">Apre la dashboard pazienti in Calc</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.open_dashboard</value>
+                        </prop>
+                    </node>
+                    
+                    <!-- New Report Button -->
+                    <node oor:name="cmd_new_report">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Nuovo Referto</value>
+                        </prop>
+                        <prop oor:name="Tooltip" oor:type="xs:string">
+                            <value xml:lang="it">Crea un nuovo referto medico</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.new_report</value>
+                        </prop>
+                    </node>
+                    
+                    <!-- Save Report Button -->
+                    <node oor:name="cmd_save_report">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Salva nel DB</value>
+                        </prop>
+                        <prop oor:name="Tooltip" oor:type="xs:string">
+                            <value xml:lang="it">Salva il referto corrente nel database</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.save_report</value>
+                        </prop>
+                    </node>
+                    
+                    <!-- Export PDF Button -->
+                    <node oor:name="cmd_export_pdf">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Esporta PDF</value>
+                        </prop>
+                        <prop oor:name="Tooltip" oor:type="xs:string">
+                            <value xml:lang="it">Esporta il referto in formato PDF</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.export_pdf</value>
+                        </prop>
+                    </node>
+                    
+                    <!-- Advance Status Button -->
+                    <node oor:name="cmd_advance_status">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Avanza Stato</value>
+                        </prop>
+                        <prop oor:name="Tooltip" oor:type="xs:string">
+                            <value xml:lang="it">Avanza lo stato del referto (BOZZA -&gt; COMPLETATO -&gt; FIRMATO -&gt; ARCHIVIATO)</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.advance_status</value>
+                        </prop>
+                    </node>
+                </node>
+            </node>
+        </node>
+        
+        <!-- Menu Integration -->
+        <node oor:name="MainMenu">
+            <node oor:name="MedicalReportsMenu">
+                <prop oor:name="Title" oor:type="xs:string">
+                    <value xml:lang="it">Referti Medici</value>
+                </prop>
+                <node oor:name="Entries">
+                    <node oor:name="entry_dashboard">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Dashboard Pazienti</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.open_dashboard</value>
+                        </prop>
+                    </node>
+                    <node oor:name="separator1">
+                        <prop oor:name="Type" oor:type="xs:string">
+                            <value>separator</value>
+                        </prop>
+                    </node>
+                    <node oor:name="entry_new_report">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Nuovo Referto...</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.new_report</value>
+                        </prop>
+                    </node>
+                    <node oor:name="entry_save_report">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Salva Referto</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.save_report</value>
+                        </prop>
+                    </node>
+                    <node oor:name="entry_export_pdf">
+                        <prop oor:name="Label" oor:type="xs:string">
+                            <value xml:lang="it">Esporta PDF</value>
+                        </prop>
+                        <prop oor:name="URL" oor:type="xs:string">
+                            <value>private:medicalreports.export_pdf</value>
+                        </prop>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+</oor:component-data>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE description SYSTEM "http://openoffice.org/2001/manifest.dtd">
+<manifest xmlns="http://openoffice.org/2001/manifest">
+    <file-entry mediatype="application/vnd.sun.star.configuration-data" full-path="Addons.xcu"/>
+    <file-entry mediatype="application/vnd.sun.star.configuration-data" full-path="protocolhandler.xcu"/>
+    <file-entry mediatype="application/java-archive" full-path="medical-reports-plugin-1.0.0.jar"/>
+    <file-entry mediatype="application/java-archive" full-path="classes/"/>
+    <file-entry mediatype="application/java-archive" full-path="lib/"/>
+</manifest>

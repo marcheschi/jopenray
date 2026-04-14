@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" 
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <node oor:name="ProtocolHandlers">
+        <node oor:name="com.sun.star.comp.deployment.configuration.ProtocolHandler">
+            <prop oor:name="Commands">
+                <set>
+                    <!-- Dashboard Command -->
+                    <val>private:medicalreports.open_dashboard</val>
+                    
+                    <!-- New Report Command -->
+                    <val>private:medicalreports.new_report</val>
+                    
+                    <!-- Save Report Command -->
+                    <val>private:medicalreports.save_report</val>
+                    
+                    <!-- Export PDF Command -->
+                    <val>private:medicalreports.export_pdf</val>
+                    
+                    <!-- Advance Status Command -->
+                    <val>private:medicalreports.advance_status</val>
+                </set>
+            </prop>
+        </node>
+        
+        <!-- Custom Protocol Handler for Medical Reports -->
+        <node oor:name="com.medicalreports.MedicalReportsPlugin">
+            <prop oor:name="Class" oor:type="xs:string">
+                <value>com.medicalreports.service.MedicalReportsPlugin</value>
+            </prop>
+            <prop oor:name="Commands">
+                <set>
+                    <val>private:medicalreports.open_dashboard</val>
+                    <val>private:medicalreports.new_report</val>
+                    <val>private:medicalreports.save_report</val>
+                    <val>private:medicalreports.export_pdf</val>
+                    <val>private:medicalreports.advance_status</val>
+                </set>
+            </prop>
+        </node>
+    </node>
+</oor:component-data>

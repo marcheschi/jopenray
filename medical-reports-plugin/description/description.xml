@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/2000/extensions">
+    <identifier value="com.medicalreports.medicalreportstation"/>
+    <version value="1.0.0"/>
+    <display-name value="Medical Report Station"/>
+    <platform value="all"/>
+    <dependencies>
+        <OpenOffice.org-minimal-version value="4.0" name="OpenOffice.org"/>
+    </dependencies>
+    <registration>
+        <component loader="com.sun.star.loader.Java2" value="medical-reports-plugin-1.0.0.jar">
+            <register-simple name="com.sun.star.task.JobExecutor">
+                <entry alias="MedicalReportsJobExecutor" constructor="com.medicalreports.service.MedicalReportsPlugin"/>
+            </register-simple>
+        </component>
+        <configuration>
+            <config-item-set config:name="ooo:configuration-schema">
+                <prop oor:name="DatabasePath" oor:type="xs:string" oor:nillable="false">
+                    <value>${office:user}/medical-reports/db</value>
+                </prop>
+                <prop oor:name="EncryptionKey" oor:type="xs:string" oor:nillable="false">
+                    <value/>
+                </prop>
+            </config-item-set>
+        </configuration>
+    </registration>
+</description>
